@@ -1,0 +1,21 @@
+(common) {
+  errors
+}
+
+
+.:53 {
+  import common
+
+  forward . tls://1.1.1.1 tls://1.0.0.1 {
+     tls_servername cloudflare-dns.com
+     health_check 5s
+  }
+  cache 30
+}
+
+consul {
+  import common
+
+  cache 30
+  forward . 127.0.0.54:8600
+}
