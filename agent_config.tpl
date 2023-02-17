@@ -30,8 +30,8 @@ dns_config = {
 }
 
 encrypt = "{{ mustEnv "CONSUL_ENCRYPTION_KEY" }}"
-encrypt_verify_incoming = true
-encrypt_verify_outgoing = true
+encrypt_verify_incoming = false
+encrypt_verify_outgoing = false
 
 leave_on_terminate = true
 rejoin_after_leave = true
